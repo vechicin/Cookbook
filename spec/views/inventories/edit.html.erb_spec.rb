@@ -1,18 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "inventories/edit", type: :view do
+RSpec.describe 'inventories/edit', type: :view do
   before(:each) do
     @inventory = assign(:inventory, Inventory.create!(
-      name: "MyString"
-    ))
+                                      name: 'MyString'
+                                    ))
   end
 
-  it "renders the edit inventory form" do
+  it 'renders the edit inventory form' do
     render
 
-    assert_select "form[action=?][method=?]", inventory_path(@inventory), "post" do
-
-      assert_select "input[name=?]", "inventory[name]"
+    assert_select 'form[action=?][method=?]', inventory_path(@inventory), 'post' do
+      assert_select 'input[name=?]', 'inventory[name]'
     end
   end
 end
