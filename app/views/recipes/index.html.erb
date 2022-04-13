@@ -5,10 +5,10 @@
   <% @recipes.each do |recipe| %>
     <div class="name_delete_container">
       <div>
-        <h2><%= link_to recipe.name, recipe %></h2>
+        <h2><%= link_to recipe.name, "/users/#{recipe.user_id}/recipes/#{recipe.id}}" %></h2>
         <br>
         <% if can? :destroy, recipe %>
-          <%= button_to "Destroy this recipe", recipe_path(id: recipe.id), method: :delete %>
+          <%= button_to "Remove", user_recipe_url(id: recipe.id), method: :delete %>
         <% end %>
       </div>
       <div>
@@ -17,4 +17,4 @@
     </div>
   <% end %>
 </div>
-<%= link_to "Add recipe", new_recipe_path %>
+<%= link_to "Add recipe", new_user_recipe_url(user_id: 1) %>
