@@ -81,3 +81,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use CanCanCan for user authorization
 gem 'cancancan'
+
+# Auto format html.erb files
+gem 'htmlbeautifier'

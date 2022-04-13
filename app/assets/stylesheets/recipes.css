@@ -1,0 +1,14 @@
+.name_delete_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  border: solid #000 3px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.delete_recipe_btn {
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
