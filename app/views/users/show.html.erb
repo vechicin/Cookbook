@@ -4,6 +4,7 @@
 
 <div>
   <%= link_to "User foods", user_foods_path(user_id: @user) %>
+  <%= link_to "User recipes", user_recipes_path(user_id: @user) %>
   <%= link_to "Back to users", users_path %>
   <% if can? :destroy, @user %>
     <%= button_to "Cancel this account", @user, method: :delete %>
