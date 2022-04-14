@@ -1,14 +1,20 @@
+<%= stylesheet_link_tag "recipes", "data-turbo-track": "reload" %>
 <p style="color: green"><%= notice %></p>
-
 <h1>Recipes</h1>
-
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+    <div class="name_delete_container">
+      <div>
+        <h2><%= link_to recipe.name, "/users/#{recipe.user_id}/recipes/#{recipe.id}}" %></h2>
+        <br>
+        <% if can? :destroy, recipe %>
+          <%= button_to "Remove", user_recipe_url(id: recipe.id), method: :delete %>
+        <% end %>
+      </div>
+      <div>
+        <p class="description"><%= recipe.description %></p>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
+<%= link_to "Add recipe", new_user_recipe_url(user_id: 1) %>
