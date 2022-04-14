@@ -5,10 +5,8 @@
 <div id="foods">
   <% @foods.each do |food| %>
     <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
+    <%= link_to "See this food", user_food_path(id: food.id), method: :delete%>
   <% end %>
 </div>
 
-<%= link_to "New food", new_food_path %>
+<%= link_to "New food", new_user_food_path %>

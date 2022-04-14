@@ -8,10 +8,5 @@ class User < ApplicationRecord
   has_many :recipes, foreign_key: :user_id
   has_many :inventories, foreign_key: :user_id
 
-  enum role: %i[user admin]
-  after_initialize :set_default_role, if: :new_record?
-
-  def set_default_role
-    self.role ||= :user
-  end
+  validates :name, presence: true
 end
