@@ -1,21 +1,21 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
-  load_and_authorize_resource
+
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+    @foods = RecipeFood.where(recipe_id: @recipe.id)
+  end
 
   # GET /recipes/new
   def new
     @recipe = Recipe.new
   end
-
-  # GET /recipes/1/edit
-  def edit; end
 
   # POST /recipes or /recipes.json
   def create
@@ -54,6 +54,11 @@ class RecipesController < ApplicationController
       format.html { redirect_to user_recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def shopping_list
+    @ingredients = RecipeFood.where(recipe_id: params[:recipe_id])
+    @ingredients_price = @ingredients.inject(0) { |sum, ingredient| sum + (ingredient.food.price.to_f * ingredient.quantity.to_i) }
   end
 
   private

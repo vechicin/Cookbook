@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :foods, only: [:index, :new, :create, :destroy, :show]
     resources :recipes
   end
+
+  get 'shopping_list/:recipe_id', to: 'recipes#shopping_list'
+
   resources :inventory_foods
   resources :recipe_foods
   resources :inventories

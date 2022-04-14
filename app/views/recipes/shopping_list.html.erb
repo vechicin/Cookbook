@@ -1,0 +1,27 @@
+<h1>Shopping List</h1>
+<h2>Amount of food items to buy: <%= @ingredients.length %></h2>
+<h2>Total price of ingredients: $<%= @ingredients_price %></h2>
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @ingredients.length === 0 %>
+    <tr>
+      <td>No ingredients added</td>
+    </tr>
+    <% else %>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.food.name %></td>
+        <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
+        <td><%= ingredient.food.price * ingredient.quantity %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
