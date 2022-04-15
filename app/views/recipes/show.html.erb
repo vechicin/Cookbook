@@ -1,5 +1,5 @@
 <div>
-  <%= link_to "Back to recipes", url_for(:back) %>
+  <%= link_to "Back to recipes", recipes_path %>
   <% if can? :destroy, @recipe %>
     <%= button_to "Remove", @recipe, method: :delete %>
   <% end %>

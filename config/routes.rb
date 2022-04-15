@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'shopping_list/:recipe_id', to: 'recipes#shopping_list'
-  get 'public_recipes', to: 'recipes#public'
   get 'recipe_foods/:recipe_id', to: 'recipe_foods#new'
   post 'recipe_foods/:recipe_id', to: 'recipe_foods#create'
 

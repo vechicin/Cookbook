@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :food_id, style: "display: block" %>
-    <%= form.collection_set :food_id, Food.where(user_id: current_user.id).order(:name), :id, :name %>
+    <%= form.collection_select :food_id, Food.where(user_id: current_user.id).order(:name), :id, :name %>
   </div>
 
   <div>

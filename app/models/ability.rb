@@ -5,7 +5,7 @@ class Ability
     can :read, Recipe, public: true
     return unless user.present?
 
-    can manage:, Recipe, user_id: user.id
+    can :manage, Recipe, user_id: user.id
 
     # The first argument to `can` is the action you are giving the user
     # permission to do.
