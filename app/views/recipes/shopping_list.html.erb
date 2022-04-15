@@ -1,6 +1,8 @@
 <h1>Shopping List</h1>
-<h2>Amount of food items to buy: <%= @ingredients.length %></h2>
-<h2>Total price of ingredients: $<%= @ingredients_price %></h2>
+<div>
+  <h2>Amount of food items to buy: <%= @ingredients.length %></h2>
+  <h2>Total price of ingredients: $<%= @ingredients_price %></h2>
+</div>
 <table>
   <thead>
     <tr>
@@ -25,3 +27,7 @@
     <% end %>
   </tbody>
 </table>
+
+<div>
+  <%= link_to "Go back", url_for(:back) %>
+<div>
