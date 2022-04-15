@@ -1,8 +1,17 @@
-<%= render @recipe %>
 <div>
-  <%# <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
-  <%= link_to "Back to recipes", user_recipes_url %>
+  <%= link_to "Back to recipes", recipes_path %>
   <% if can? :destroy, @recipe %>
-    <%= button_to "Remove", user_recipe_url, method: :delete %>
+    <%= button_to "Remove", @recipe, method: :delete %>
   <% end %>
 </div>
+
+<%= render @recipe %>
+
+<div>
+  <% if can? :destroy, @recipe %>
+    <a href="/shopping_list/<%= @recipe.id %>">Generate Shopping List</a>
+    <a href="/recipe_foods/<%= @recipe.id %>">Add Ingredient</a>
+  <% end %>
+</div>
+
+<%= render 'recipe_ingredients' %>

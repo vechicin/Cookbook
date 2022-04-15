@@ -3,8 +3,6 @@
 <%= render @food %>
 
 <div>
-  <%= link_to "Back to foods", user_foods_path %>
-<% if can? :destroy, @food %>
-  <%= button_to "Delete this food", user_food_path, method: :delete %>
-<% end %>
+  <%= link_to "Back to foods", foods_path %>
+  <%= button_to "Delete this food", @food, method: :delete %>
 </div>

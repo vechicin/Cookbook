@@ -1,0 +1,12 @@
+<%= link_to recipe_path(recipe) do %>
+  <div>
+    <div>
+      <h2><%= recipe.name %></h2>
+      <p><strong>By: </strong><%= recipe.user.name %></p>
+    </div>
+    <div>
+      <h3>Total food items: <%= RecipeFood.total_ingredients(recipe.id) %></h3>
+      <h3>Total price: $<%= RecipeFood.total_ingredients_cost(recipe.id) %> </h3>
+    </div>
+  </div>
+<% end %>
