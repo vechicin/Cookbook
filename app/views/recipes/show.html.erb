@@ -1,17 +1,21 @@
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
-  <% if can? :destroy, @recipe %>
-    <%= button_to "Remove", @recipe, method: :delete %>
-  <% end %>
-</div>
-
+<div class="page-container">
+<div class="recipe-details">
 <%= render @recipe %>
 
-<div>
+<div class="details-buttons">
   <% if can? :destroy, @recipe %>
-    <a href="/shopping_list/<%= @recipe.id %>">Generate Shopping List</a>
-    <a href="/recipe_foods/<%= @recipe.id %>">Add Ingredient</a>
+    <a class="create-button" href="/shopping_list/<%= @recipe.id %>">Generate Shopping List</a>
+    <a class="create-button" href="/recipe_foods/<%= @recipe.id %>">Add Ingredient</a>
   <% end %>
 </div>
+<hr>
+</div>
+
 
 <%= render 'recipe_ingredients' %>
+
+<div id="back-recipes">
+  <%= link_to "Back to recipes", recipes_path, class: "create-button" %>
+  <%= link_to "Create new recipe", new_recipe_path, class: "create-button" %>
+</div>
+</div>

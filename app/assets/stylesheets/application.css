@@ -141,3 +141,54 @@ thead {
 td {
   height: 35px;
 }
+
+.no-foods {
+  font-size: 20px;
+}
+
+.recipe-details {
+  width: 85vw;
+  text-align: center;
+}
+
+.recipe-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.recipe-details-p {
+  margin-bottom: 20px;
+}
+
+.details-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+#back-recipes {
+  width: 100vw;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.recipe-details-table {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-food-button {
+  text-align: center;
+  margin-top: 10px;
+}

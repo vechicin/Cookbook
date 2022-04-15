@@ -1,8 +1,8 @@
-<div>
+<div class="recipe-details-table">
   <% if @foods.empty? %>
     <p>No ingredients available</p>
   <% else %>
-    <table>
+    <table class="food-table">
       <thead>
         <tr>
           <th>Ingredient</th>
@@ -25,7 +25,7 @@
               <% if user_signed_in? %>
                 <td>
                   <%= link_to "Modify", edit_recipe_food_path(ingredient) %>
-                  <%= button_to "Delete", ingredient, method: :delete %>
+                  <%= button_to "Delete", ingredient, method: :delete, class: "destroy-button" %>
                 </td>
               <% end %>
             </tr>

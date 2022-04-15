@@ -5,6 +5,9 @@
   <% end %>
 <div class="page-container" id="food-table-container">
   <h2 class="page-title">Foods</h1>
+      <% if @foods.empty? %>
+          <p class="no-foods">No foods yet, please add an ingredient using the button above</p>
+      <% else %>
   <table class="food-table">
     <thead>
       <tr>
@@ -17,11 +20,6 @@
       </tr>
     </thead>
     <tbody>
-      <% if @foods.empty? %>
-        <tr>
-          <td>No foods yet</td>
-        </tr>
-      <% else %>
         <% @foods.each do |food| %>
           <tr>
             <td><%= food.name %></td>
