@@ -45,7 +45,9 @@ class RecipesController < ApplicationController
 
   def shopping_list
     @ingredients = RecipeFood.includes([:food]).where(recipe_id: params[:recipe_id])
-    @ingredients_price = @ingredients.inject(0) { |sum, ingredient| sum + (ingredient.food.price.to_f * ingredient.quantity.to_i) }
+    @ingredients_price = @ingredients.inject(0) do |sum, ingredient|
+      sum + (ingredient.food.price.to_f * ingredient.quantity.to_i)
+    end
   end
 
   private
