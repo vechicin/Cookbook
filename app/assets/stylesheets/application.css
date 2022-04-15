@@ -60,3 +60,31 @@ a {
 .sign-out-button:hover {
   cursor: pointer;
 }
+
+.public-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-card-container {
+  display: flex;
+  justify-content: space-between;
+  height: 85px;
+  align-items: center;
+  border: 1px solid #000;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #c3834d;
+  border-radius: 5px;
+  color: #02198b;
+}
+
+.public-recipes-container {
+  width: 50%;
+}
+
+.public-title {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
