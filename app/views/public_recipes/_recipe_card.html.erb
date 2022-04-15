@@ -1,12 +1,12 @@
 <%= link_to recipe_path(recipe) do %>
-  <div>
+  <div class="page-card-container">
     <div>
-      <h2><%= recipe.name %></h2>
+      <h3><%= recipe.name %></h3>
       <p><strong>By: </strong><%= recipe.user.name %></p>
     </div>
     <div>
-      <h3>Total food items: <%= RecipeFood.total_ingredients(recipe.id) %></h3>
-      <h3>Total price: $<%= RecipeFood.total_ingredients_cost(recipe.id) %> </h3>
+      <h4>Total food items: <%= RecipeFood.total_ingredients(recipe.id) %></h4>
+      <h4>Total price: $<%= RecipeFood.total_ingredients_cost(recipe.id) %> </h4>
     </div>
   </div>
 <% end %>

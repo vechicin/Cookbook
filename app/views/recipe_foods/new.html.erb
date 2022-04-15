@@ -1,4 +1,5 @@
-<h1>New Ingredient</h1>
+<div class="form-container">
+<h2 class="page-title">New Ingredient</h2>
 
 <%= render "form", recipe_food: @recipe_food, foods: @foods %>
 
@@ -6,4 +7,5 @@
 
 <div>
   <%= link_to "Go back", url_for(:back) %>
+</div>
 </div>

@@ -1,27 +1,27 @@
 <div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
+<div>
+  <h2 class="page-title"><%= recipe.name %></h2>
+</div>
 
-  <p>
+<div class="recipe-detail-grid">
+  <p class="recipe-details-p">
     <strong>Preparation time:</strong>
     <%= recipe.preparation_time %>
   </p>
 
-  <p>
+  <p class="recipe-details-p">
     <strong>Cooking time:</strong>
     <%= recipe.cooking_time %>
   </p>
 
-  <p>
+  <p class="recipe-details-p">
     <strong>Description:</strong>
     <%= recipe.description %>
   </p>
 
-  <p>
+  <p class="recipe-details-p">
     <strong>Public:</strong>
     <%= recipe.public %>
   </p>
-
+  </div>
 </div>
