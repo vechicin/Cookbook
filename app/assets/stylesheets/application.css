@@ -48,7 +48,7 @@ a {
   color: #fff;
 }
 
-.sign-out-button {
+.destroy-button {
   width: 85px;
   height: 25px;
   border-radius: 8px;
@@ -57,17 +57,17 @@ a {
   color: #ddcece;
 }
 
-.sign-out-button:hover {
+.destroy-button:hover {
   cursor: pointer;
 }
 
-.public-container {
+.page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.recipe-card-container {
+.page-card-container {
   display: flex;
   justify-content: space-between;
   height: 85px;
@@ -84,7 +84,20 @@ a {
   width: 50%;
 }
 
-.public-title {
+.page-title {
   margin-bottom: 30px;
   margin-top: 10px;
+}
+
+#recipe-card-container {
+  width: 350px;
+  height: 100px;
+}
+
+.description-container {
+  text-align: center;
+}
+
+#recipe-destroy {
+  background-color: #c30101;
 }
