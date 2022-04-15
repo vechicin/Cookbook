@@ -21,7 +21,7 @@
             <tr>
               <td><%= ingredient.food.name %></td>
               <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
-              <td>$<%= (ingredient.food.price * ingredient.quantity).round(2) %></td>
+              <td>$<%= (ingredient.food.price.to_f * ingredient.quantity.to_i).round(2) %></td>
               <% if user_signed_in? %>
                 <td>
                   <%= link_to "Modify", edit_recipe_food_path(ingredient) %>

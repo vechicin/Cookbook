@@ -6,7 +6,7 @@ class RecipeFood < ApplicationRecord
     recipes = RecipeFood.where(recipe_id:)
     return 0 if recipes.empty?
 
-    recipes.map { |recipe| recipe.quantity * recipe.food.price }.sum.round(2)
+    recipes.map { |recipe| recipe.quantity.to_i * recipe.food.price.to_f }.sum.round(2)
   end
 
   def self.total_ingredients(recipe_id)

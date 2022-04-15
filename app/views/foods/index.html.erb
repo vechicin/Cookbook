@@ -29,7 +29,7 @@
         <tr>
           <td><%= food.name %></td>
           <td><%= food.measurement_unit %></td>
-          <td><%= food.price.round(2) %></td>
+          <td><%= food.price.to_f.round(2) %></td>
           <% if user_signed_in? %>
           <td>
             <%= button_to "Delete", food, method: :delete %>
