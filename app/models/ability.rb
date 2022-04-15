@@ -2,24 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
+    can :read, Recipe, public: true
+    return unless user.present?
 
+    can manage:, Recipe, user_id: user.id
 
-
-    can :read, Food
-    can :read, Recipe
-
-    return unless user.present? # additional permissions for logged in users (they can read their own posts)
-
-    can :destroy, User, id: user.id
-    can :create, [Recipe, Food], user_id: user.id
-    can :destroy, [Recipe, Food], user_id: user.id
-
-    return unless user.admin? # additional permissions for administrators
-
-    can :manage, :all
-
-    #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
