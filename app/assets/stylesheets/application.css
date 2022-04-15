@@ -48,6 +48,14 @@ a {
   color: #fff;
 }
 
+.create-button {
+  border-radius: 8px;
+  border: none;
+  background-color: #378805;
+  color: #ddcece;
+  padding: 1%;
+}
+
 .destroy-button {
   width: 85px;
   height: 25px;
@@ -100,4 +108,36 @@ a {
 
 #recipe-destroy {
   background-color: #c30101;
+}
+
+.add-food-container {
+  text-align: right;
+  padding: 2%;
+}
+
+tr:nth-child(even) {
+  background-color: #64869c;
+}
+
+#food-table-container {
+  height: 100vh
+}
+
+.food-table {
+  height: 25%;
+  width: 60%;
+}
+
+tbody {
+  text-align: center;
+}
+
+thead {
+  background-color: #6495ed
+  ;
+  height: 30px;
+}
+
+td {
+  height: 35px;
 }
