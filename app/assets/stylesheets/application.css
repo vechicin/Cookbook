@@ -32,7 +32,7 @@ nav {
   justify-content: center;
   background-color: rgb(47, 137, 255);
 }
- 
+
 .navbar {
   display: flex;
   justify-content: space-evenly;
@@ -120,7 +120,7 @@ tr:nth-child(even) {
 }
 
 #food-table-container {
-  height: 100vh
+  height: 100vh;
 }
 
 .food-table {
@@ -133,8 +133,7 @@ tbody {
 }
 
 thead {
-  background-color: #6495ed
-  ;
+  background-color: #6495ed;
   height: 30px;
 }
 
@@ -191,4 +190,11 @@ hr {
 #add-food-button {
   text-align: center;
   margin-top: 10px;
+}
+
+.shopping-list {
+  display: flex;
+  width: 80vw;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
 }
