@@ -84,7 +84,17 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://vechicin-cookbook.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mail.com',
+    port: 587,
+    domain: 'https://vechicin-cookbook.herokuapp.com',
+    user_name: 'therailscookbook@gmail.com',
+    password: 'cookbook2022@',
+    authentication: 'plain',
+    enable_starttls_auto: true }
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new($stdout)
