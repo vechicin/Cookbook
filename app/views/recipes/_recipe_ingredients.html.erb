@@ -1,0 +1,37 @@
+<div class="recipe-details-table">
+  <% if @foods.empty? %>
+    <p>No ingredients available</p>
+  <% else %>
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Ingredient</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @recipe.recipe_foods.length === 0 %>
+          <tr>
+            <td>No ingredients available</td>
+          </tr>
+        <% else %>
+          <% @recipe.recipe_foods.each do |ingredient| %>
+            <tr>
+              <td><%= ingredient.food.name %></td>
+              <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
+              <td>$<%= (ingredient.food.price.to_f * ingredient.quantity.to_i).round(2) %></td>
+              <% if user_signed_in? %>
+                <td>
+                  <%= link_to "Modify", edit_recipe_food_path(ingredient) %>
+                  <%= button_to "Delete", ingredient, method: :delete, class: "destroy-button" %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

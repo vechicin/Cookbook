@@ -1,0 +1,8 @@
+<div class="page-container">
+  <h2 class="page-title">Public Recipes</h2>
+  <div class="public-recipes-container">
+    <% @recipes.each do |recipe| %>
+      <%= render 'recipe_card', recipe: recipe %>
+    <% end %>
+  </div>
+</div>

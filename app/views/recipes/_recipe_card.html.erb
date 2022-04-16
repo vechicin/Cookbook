@@ -1,0 +1,12 @@
+<%= link_to recipe_path(recipe) do %>
+  <div class="page-card-container" id="recipe-card-container">
+    <div>
+      <h3><%= recipe.name %></h3>
+      <br>
+      <%= button_to "Remove", recipe, method: :delete, class: "destroy-button", id: "recipe-destroy" %>
+    </div>
+    <div class="description-container">
+      <p><%= recipe.description %></p>
+    </div>
+  </div>
+<% end %>

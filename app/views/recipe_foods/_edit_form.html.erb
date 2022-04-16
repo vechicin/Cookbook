@@ -1,0 +1,15 @@
+<%= form_with(url: "/recipe_foods/#{@recipe_food.recipe_id}", method: :patch) do |form| %>
+  <div>
+    <%= form.label :food_id, style: "display: block" %>
+    <span><%= @recipe_food.food.name %></span>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class:"create-button" %>
+  </div>
+<% end %>

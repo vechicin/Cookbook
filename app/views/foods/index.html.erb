@@ -1,0 +1,38 @@
+  <% if user_signed_in? %>
+    <div class="add-food-container">
+      <%= link_to 'Add food', new_food_path, class: "create-button" %>
+    </div>
+  <% end %>
+<div class="page-container" id="food-table-container">
+  <h2 class="page-title">Foods</h1>
+      <% if @foods.empty? %>
+          <p class="no-foods">No foods yet, please add an ingredient using the button above</p>
+      <% else %>
+  <table class="food-table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <% if user_signed_in? %>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td>$<%= food.price.to_f.round(2) %></td>
+            <% if user_signed_in? %>
+              <td>
+                <%= button_to "Delete", food, method: :delete, class: "destroy-button" %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

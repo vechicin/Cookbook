@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+<div class="page-container">
+<h2 class="page-title">Recipes</h2>
+<div id="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render 'recipe_card', recipe: recipe %>
+  <% end %>
+</div>
+</div>
